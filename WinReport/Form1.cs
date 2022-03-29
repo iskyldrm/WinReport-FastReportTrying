@@ -15,7 +15,7 @@ namespace WinReport
 {
     public partial class Form1 : Form
     {
-        string dosya = "";
+        
         public Form1()
         {
             InitializeComponent();
