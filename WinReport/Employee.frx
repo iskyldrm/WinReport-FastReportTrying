@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/28/2022 16:34:36" ReportInfo.Modified="03/28/2022 16:43:49" ReportInfo.CreatorVersion="2022.2.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqJUrEa/KIcQqhhcfnlqC6PC6b70ltOmTeLWh2vhAF0ivYvQZbcY/A8qTXhAWsZJeFGEPA9xrXyYOG3aFk4+m5VDVpVP/FQxXT5tusPY8IAca52k9WiwL1/WYSLVgXxh55JkR8mlLQ4J1cQJLBHJ2fWqVt412w4hq+ADLYfpMQ6FXoQus62YDwrmo92+EH6qIFjCHcL2ds0i8wS3IkHi8pEA==">
+      <TableDataSource Name="Employees" DataType="System.Int32" Enabled="true" TableName="Employees">
+        <Column Name="EmployeeID" DataType="System.Int32"/>
+        <Column Name="LastName" DataType="System.String"/>
+        <Column Name="FirstName" DataType="System.String"/>
+        <Column Name="Title" DataType="System.String"/>
+        <Column Name="TitleOfCourtesy" DataType="System.String"/>
+        <Column Name="BirthDate" DataType="System.DateTime"/>
+        <Column Name="HireDate" DataType="System.DateTime"/>
+        <Column Name="Address" DataType="System.String"/>
+        <Column Name="City" DataType="System.String"/>
+        <Column Name="Region" DataType="System.String"/>
+        <Column Name="PostalCode" DataType="System.String"/>
+        <Column Name="Country" DataType="System.String"/>
+        <Column Name="HomePhone" DataType="System.String"/>
+        <Column Name="Extension" DataType="System.String"/>
+        <Column Name="Photo" DataType="System.Byte[]" BindableControl="Picture"/>
+        <Column Name="Notes" DataType="System.String"/>
+        <Column Name="ReportsTo" DataType="System.Int32"/>
+        <Column Name="PhotoPath" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Dock="Fill" Text="Employees" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text3" Width="103.95" Height="18.9" Fill.Color="LightSkyBlue" Text="EmployeeID" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Left="103.95" Width="103.95" Height="18.9" Fill.Color="LightSkyBlue" Text="LastName" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Left="207.9" Width="103.95" Height="18.9" Fill.Color="LightSkyBlue" Text="FirstName" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text9" Left="311.85" Width="103.95" Height="18.9" Fill.Color="LightSkyBlue" Text="Title" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text11" Left="415.8" Width="103.95" Height="18.9" Fill.Color="LightSkyBlue" Text="City" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text13" Left="519.75" Width="103.95" Height="18.9" Fill.Color="LightSkyBlue" Text="Country" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text15" Left="623.7" Width="94.5" Height="18.9" Fill.Color="LightSkyBlue" Text="[Employees.Photo]" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="75.6" EvenStyle="EvenRows" DataSource="Employees">
+      <TextObject Name="Text2" Width="103.95" Height="18.9" Text="[Employees.EmployeeID]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text4" Left="103.95" Width="103.95" Height="18.9" Text="[Employees.LastName]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text6" Left="207.9" Width="103.95" Height="18.9" Text="[Employees.FirstName]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text8" Left="311.85" Width="103.95" Height="18.9" Text="[Employees.Title]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text10" Left="415.8" Width="103.95" Height="18.9" Text="[Employees.City]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text12" Left="519.75" Width="103.95" Height="18.9" Text="[Employees.Country]" Font="Arial, 10pt" Style="Data"/>
+      <PictureObject Name="Picture1" Left="623.7" Width="85.05" Height="75.6" DataColumn="Employees.Photo"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="153.75" Width="718.2" Height="18.9">
+      <TextObject Name="Text16" Width="718.2" Height="18.9" Dock="Fill" Fill.Color="LightSkyBlue" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

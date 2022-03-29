@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/28/2022 16:43:49" ReportInfo.Modified="03/28/2022 17:00:32" ReportInfo.CreatorVersion="2022.2.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqJUrEa/KIcQqhhcfnlqC6PC6b70ltOmTeLWh2vhAF0ivYvQZbcY/A8qTXhAWsZJeFGEPA9xrXyYOG3aFk4+m5VDVpVP/FQxXT5tusPY8IAca52k9WiwL1/WYSLVgXxh55JkR8mlLQ4J1cQJLBHJ2fWqVt412w4hq+ADLYfpMQ6FXoQus62YDwrmo92+EH6qIFnBUuhn57P3KwyEgAy4+dNw==">
+      <TableDataSource Name="Categories" DataType="System.Int32" Enabled="true" TableName="Categories">
+        <Column Name="CategoryID" DataType="System.Int32"/>
+        <Column Name="CategoryName" DataType="System.String"/>
+        <Column Name="Description" DataType="System.String"/>
+        <Column Name="Picture" DataType="System.Byte[]" BindableControl="Picture"/>
+      </TableDataSource>
+      <TableDataSource Name="Products" DataType="System.Int32" Enabled="true" TableName="Products">
+        <Column Name="ProductID" DataType="System.Int32"/>
+        <Column Name="ProductName" DataType="System.String"/>
+        <Column Name="SupplierID" DataType="System.Int32"/>
+        <Column Name="CategoryID" DataType="System.Int32"/>
+        <Column Name="QuantityPerUnit" DataType="System.String"/>
+        <Column Name="UnitPrice" DataType="System.Decimal"/>
+        <Column Name="UnitsInStock" DataType="System.Int16"/>
+        <Column Name="UnitsOnOrder" DataType="System.Int16"/>
+        <Column Name="ReorderLevel" DataType="System.Int16"/>
+        <Column Name="Discontinued" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Left="226.8" Top="9.45" Width="170.1" Height="18.9" Text="Urun Raporu" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text2" Top="9.45" Width="113.4" Height="18.9" Text="Caregory Name" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text3" Left="122.85" Top="9.45" Width="94.5" Height="18.9" Text="Description" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text4" Left="226.8" Top="9.45" Width="189" Height="18.9" Text="Photo&#13;&#10;" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="75.6" DataSource="Categories">
+      <TextObject Name="Text6" Left="122.85" Top="18.9" Width="94.5" Height="18.9" Text="[Categories.Description]" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <PictureObject Name="Picture1" Left="226.8" Width="189" Height="75.6" DataColumn="Categories.Picture"/>
+      <TextObject Name="Text7" Top="18.9" Width="94.5" Height="18.9" Text="[Categories.CategoryName]" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="153.75" Width="718.2" Height="18.9">
+      <TextObject Name="Text8" Left="151.2" Width="387.45" Height="18.9" Text="Bu rapor [date] tarihinde oluşturulmuştur." HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
